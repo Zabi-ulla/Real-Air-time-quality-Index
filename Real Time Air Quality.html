@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climateserver: Real-Time Air Quality</title>
+    <!-- Link to Tailwind CSS for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts for 'Inter' font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your custom CSS file for additional styling -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Apply Inter font family globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <!-- Main container for the application -->
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md flex flex-col items-center">
+        <!-- Application Title -->
+        <h1 class="text-3xl font-bold text-blue-800 mb-6">🌍Real-Time Air Quality</h1>
+
+        <!-- Location Input Section -->
+        <div class="w-full mb-6">
+            <label for="locationInput" class="block text-gray-700 text-sm font-semibold mb-2">
+                Enter Location (e.g., Hyderabad):
+            </label>
+            <input
+                type="text"
+                id="locationInput"
+                placeholder="City"
+                class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+            />
+        </div>
+
+        <!-- Fetch AQI Button -->
+        <button
+            id="fetchButton"
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75 mb-6 w-full"
+        >
+            Fetch AQI & Advice
+        </button>
+
+        <!-- Status Message Display -->
+        <p id="statusLabel" class="text-center font-medium mb-4 min-h-[1.5rem]"></p>
+
+        <!-- AQI Display Section -->
+        <div class="flex flex-col items-center mb-6">
+            <p class="text-xl text-gray-600 mb-2">Current AQI:</p>
+            <p id="aqiLabel" class="text-5xl font-extrabold text-blue-700">---</p>
+        </div>
+
+        <!-- Health Advice Section -->
+        <div class="w-full">
+            <p class="block text-gray-700 text-sm font-semibold mb-2">Health Advice:</p>
+            <textarea
+                id="adviceOutput"
+                rows="6"
+                placeholder="Health advice will appear here..."
+                readonly
+                class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight bg-gray-50 focus:outline-none focus:border-transparent resize-none"
+            ></textarea>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

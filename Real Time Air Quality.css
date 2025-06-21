@@ -1,0 +1,56 @@
+/* Custom CSS for finer control and unique touches */
+
+/* General body styling (already set by Tailwind in HTML but good practice to keep) */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Enhancing the main container */
+.bg-white {
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover/focus effects */
+}
+
+/* Specific styling for the AQI Label based on value (dynamic, will be handled by JS) */
+/* .aqi-good { color: #28a745; } Green */
+/* .aqi-moderate { color: #ffc107; } Yellow */
+/* .aqi-unhealthy-sensitive { color: #fd7e14; } Orange */
+/* .aqi-unhealthy { color: #dc3545; } Red */
+/* .aqi-very-unhealthy { color: #6f42c1; } Purple */
+/* .aqi-hazardous { color: #212529; } Dark Gray/Black */
+
+/* Focus state for the input field */
+input[type="text"]:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue ring shadow */
+}
+
+/* Disabled state for the button */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: scale(1); /* Prevent scale on disabled state */
+    box-shadow: none;
+}
+
+/* Custom styling for the textarea */
+textarea {
+    border: 1px solid #e2e8f0; /* Default border color */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); /* Inner shadow for depth */
+}
+
+textarea:focus {
+    border-color: transparent; /* Remove default border on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue ring shadow */
+}
+
+/* Responsive adjustments (example - Tailwind handles most, but for custom needs) */
+@media (max-width: 640px) {
+    .bg-white {
+        padding: 1.5rem; /* Adjust padding on smaller screens */
+    }
+    .text-5xl {
+        font-size: 3rem; /* Make AQI font size slightly smaller */
+    }
+}
